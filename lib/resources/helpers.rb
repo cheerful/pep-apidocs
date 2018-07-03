@@ -1,6 +1,6 @@
 require 'json'
 
-module Freckle
+module Pep
   module Resources
     module Helpers
       API_HOST = "https://api.letsfreckle.com/"
@@ -64,4 +64,4 @@ module Freckle
   end
 end
 
-include Freckle::Resources::Helpers
+include Pep::Resources::Helpers

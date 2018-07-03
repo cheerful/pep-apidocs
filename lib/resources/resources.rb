@@ -1,4 +1,4 @@
-module Freckle
+module Pep
   module Resources
     OAUTH2_URL = "https://secure.letsfreckle.com"
     BASE_DOMAIN = "api.letsfreckle.com"
@@ -711,4 +711,4 @@ module Freckle
   end
 end
 
-include Freckle::Resources
+include Pep::Resources
