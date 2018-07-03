@@ -11,154 +11,50 @@ module Pep
        "message" => "Validation Failed",
        "errors" => [
         {
-          "resource" => "Entry",
+          "resource" => "Card",
           "field" => "title",
           "code" => "missing_field"
         }
       ]
     }
 
-    DELETE_ERROR_EXAMPLE = {
-      "message" => "The Project cannot be deleted because it has entries, expenses, or invoices.",
-      "errors" => [
-        {
-          "resource" => "Project",
-          "field" => "base",
-          "code" => "not_deletable"
-        }
-      ]
-    }
-
-    ARCHIVE_ERROR_EXAMPLE = {
-      "message" => "The Project should be deleted because it does not have any entries, expenses, or invoices.",
-      "errors" => [
-        {
-          "resource" => "Project",
-          "field" => "base",
-          "code" => "deletable"
-        }
-      ]
-    }
-
-    INVOICE_ENTRIES_AND_EXPENSES_ERROR_EXAMPLE = {
-      "message" => "Entries or Expenses could not be added",
-      "errors" => [
-        {
-          :resource => "Entry",
-          :field => "entry_ids[1]",
-          :code => "archived_project"
-        },
-        {
-          :resource => "Expense",
-          :field => "expense_ids[4]",
-          :code => "missing"
-        },
-      ]
-    }
-
-    INVOICE_ENTRIES_ERROR_EXAMPLE = {
-      "message" => "Entries could not be added",
-      "errors" => [
-        {
-          :resource => "Entry",
-          :field => "entry_ids[1]",
-          :code => "archived_project"
-        }
-      ]
-    }
-
-    INVOICE_EXPENSES_ERROR_EXAMPLE = {
-      "message" => "Expenses could not be added",
-      "errors" => [
-        {
-          :resource => "Expense",
-          :field => "expense_ids[4]",
-          :code => "missing"
-        }
-      ]
-    }
-
-    OAUTH_AUTHORIZATION_TOKEN = {
-      "id" => 1,
-      "url" => "#{API_V1_URL}/authorizations/1",
-      "scopes" => ["current_user","project"],
-      "token" => "abc123",
-      "app" => {
-        "url" => "http://dabestfreckleapp.com",
-        "name" => "Da Best Freckle App",
-        "client_id" => "98643ycvfjfswx"
-      },
-      "note" => "describes what the token is generated for",
-      "note_url" => "http://explanation.com/",
-      "updated_at" => "2011-09-06T20:39:23Z",
-      "created_at" => "2011-09-06T17:26:27Z"
-
-    }
-
     SIMPLE_USER = {
-      "id" =>  5538,
-      "email" =>  "john.test@test.com",
-      "first_name" =>  "John",
-      "last_name" =>  "Test",
-      "profile_image_url" => "#{BASE_URL}/images/avatars/0000/0001/avatar.jpg",
-      "url" =>  "#{API_V1_URL}/users/5538",
+      id: 5538,
+      email: "john.test@test.com",
+      full_name: "John Test",
+      display_name: "John 'Tester' Test",
+      timezone:"UTC",
+      profile_image_url:"#{BASE_URL}/images/avatars/0000/0001/avatar.jpg",
+      url: "#{API_V1_URL}/users/5538",
     }
-
-    SIMPLE_TEAM = {
-      "id" => 9283,
-      "name" => "R&D",
-      "url" => "#{API_V1_URL}/teams/9283"
-    }
-
-    USER = SIMPLE_USER.merge({
-      "state" =>"active",
-      "role" => "leader",
-
-      "teams" => [SIMPLE_TEAM],
-
-      "entries" => 0,
-      "entries_url" => "#{API_V1_URL}/users/5538/entries",
-
-      "expenses" => 0,
-      "expenses_url" => "#{API_V1_URL}/users/5538/expenses",
-
-      "give_access_to_project_url" => "#{API_V1_URL}/users/5538/give_access_to_projects",
-      "revoke_access_to_project_url" => "#{API_V1_URL}/users/5538/revoke_access_to_projects",
-      "revoke_access_to_all_projects_url" => "#{API_V1_URL}/users/5538/revoke_access_to_all_projects",
-
-      "activate_url" => "#{API_V1_URL}/users/5538/activate",
-      "deactivate_url" => "#{API_V1_URL}/users/5538/deactivate",
-
-      "created_at" => "2010-06-09T20:44:57Z",
-      "updated_at" => "2010-06-09T20:44:57Z",
-    })
 
     CURRENT_USER = SIMPLE_USER.merge({
-      "state" =>"active",
-      "role" => "leader",
+      state: "active",
+      role:  "admin",
 
-      "entries" => 0,
-      "entries_url" => "#{API_V1_URL}/users/5538/entries",
+      assigned_cards: 0,
+      assigned_cards_url: "#{API_V1_URL}/users/5538/assigned_cards",
 
-      "expenses" => 0,
-      "expenses_url" => "#{API_V1_URL}/users/5538/expenses",
-
-      "time_format" => "fraction",
-      "week_start"=> "Sunday",
-      "utc_offset" => -28800,
-      "send_personal_weekly_report_email" => true,
-      "send_team_weekly_report_email" => true,
-
-      "created_at" => "2010-06-09T20:44:57Z",
-      "updated_at" => "2010-06-09T20:44:57Z",
+      created_at: "2010-06-09T20:44:57Z",
+      updated_at: "2010-06-09T20:44:57Z",
     })
 
-    USER_EDITABLE_FIELDS = {
-      "email" => USER["email"],
-      "first_name" => USER["first_name"],
-      "last_name" => USER["last_name"],
-      "role" => USER["role"]
+    ACCOUNT = {
+      id:  3344,
+      name:  "testit",
+      primary_owner:  SIMPLE_USER,
+
+      url:  "#{API_V1_URL}/account/",
+      created_at: "2012-01-09T08:33:29Z",
+      updated_at: "2012-01-09T08:33:29Z",
     }
+
+    ITERATION = {
+
+    }
+
+
+    ### FRECKLE EXAMPLES, TO BE TRIMMED DOWN
 
     TEAM = {
       "id" => 9283,
@@ -183,17 +79,6 @@ module Pep
 
     TEAM_EDIT_FIELDS = {
       "name" => TEAM["name"]
-    }
-
-    ACCOUNT = {
-      "id" =>  3344,
-      "name" =>  "testit",
-      "invoicing_enabled"=>  true,
-      "owner" =>  SIMPLE_USER,
-
-      "url" =>  "#{API_V1_URL}/account/",
-      "created_at" => "2012-01-09T08:33:29Z",
-      "updated_at" => "2012-01-09T08:33:29Z",
     }
 
     SIMPLE_PROJECT = {
@@ -689,24 +574,6 @@ module Pep
       "start_url" => "#{API_V1_URL}/projects/37396/timer/start",
       "pause_url" => "#{API_V1_URL}/projects/37396/timer/pause",
       "log_url"   => "#{API_V1_URL}/projects/37396/timer/log"
-    }
-
-    SUBDOMAIN = {
-      :name => ACCOUNT["name"],
-      :avatar => USER["profile_image_url"]
-    }
-
-    OAUTH_ACCESS_TOKEN = {
-      :access_token => "abcedfghijk1234567890",
-      :refresh_token => "poiuytrew098765",
-      :expires_in=>12345678,
-      :scope => "",
-      :token_type => "bearer"
-    }
-
-    OAUTH_ACCESS_TOKEN_ERROR_EXAMPLE = {
-      :error => "invalid_grant",
-      :error_description => "The provided access grant is invalid, expired, or revoked (e.g. invalid assertion, expired authorization token, bad end-user password credentials, or mismatching authorization code and redirection URI)."
     }
   end
 end
