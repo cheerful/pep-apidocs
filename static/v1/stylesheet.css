@@ -1,79 +1,127 @@
+@font-face {
+  font-family: 'OpenSans';
+  src: url('/fonts/OpenSans-Regular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('/fonts/OpenSans-Semibold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('/fonts/OpenSans-Italic-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('/fonts/OpenSans-SemiboldItalic-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
+
 body {
   margin: 0;
-  font: 14px/19px "Helvetica Neue", Arial, Helvetica, sans-serif;
-}
-
-#logo{
-  height: 43px;
-}
-
-#content {
-  width: 700px;
-  margin: 0 auto;
-}
-
-#markdown-toc{
-  display: inline;
-  padding-left: 0px;
-}
-
-#markdown-toc:before{
-  content: 'Jump to:';
-  margin-right: 5px;
-}
-
-#markdown-toc li{
-  display: inline;
-  border-right: 1px solid black;
-  padding-right: 5px;
-}
-
-#markdown-toc li:last-child{
-  border-right: none;
+  font: 14px/19px "OpenSans", "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
 a {
   color: #ec497c;
 }
 
+h1,h2,h3,h4,h5 {
+  font-weight: normal;
+}
+
 h1 {
-  margin: 0px 0 30px 0;
-  border-bottom: 2px solid #f0f0f0;
-  padding: 20px 0; 
   color: #404041;
-  position: relative;
-}
-
-h1 img {
-  position: relative;
-  top: 13px;
-}
-
-h2 {
   margin: 40px 0 20px 0;
 }
 
-#nav {
-  background: #c7e76c;
-  color: #fff;
+h1 img {
+  vertical-align: middle;
 }
 
-.banner > div {
-  width: 700px;
+h2 {
+  margin: 60px 0 10px 0;
+  font-size: 22px;
+  line-height: 34px;
+}
+
+h3 {
+  margin-top: 30px;
+}
+
+#header {
+  padding-left: 10px;
+}
+
+#logo, #logo img {
+  padding-top: 5px;
+  width: 125px;
+}
+
+#container {
+  max-width: 1000px;
+  padding: 0 50px 20px 0;
   margin: 0 auto;
-  padding: 10px 0;
+}
+
+#nav {
+  width: 150px;
+  position: fixed;
+  padding: 0 0 0 50px;
+}
+#nav h2 {
+  font-size: 16px;
+  line-height: 19px;
+  margin: 20px 0 5px 0;
+}
+#nav ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+}
+
+#version_switch li {
+  display: inline;
+  list-style-type: none;
+}
+
+#version_switch li a{
+  display: inline;
+}
+
+#version_switch li:after{
+  content: "|";
+}
+
+#version_switch li:last-child:after{
+  content: "";
+}
+
+#nav ul li {
+  font-size: 16px;
+  line-height: 24px;
 }
 
 #nav a {
-  display: inline-block;
-  margin: 0 5px 0 0;
-  background: #a1cc57;
-  border-radius: 20px;
+  display: block;
   color: #5e8b31;
-  padding: 2px 15px;
-  font-weight: bold;
   text-decoration: none;
-  text-transform: lowercase;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+#nav a.current{
+  background: #a1cc57;
 }
 
 #nav a.back {
@@ -81,35 +129,34 @@ h2 {
   color: #fff;
 }
 
-#apiv2-banner{
-  background: #ec497c;
+#logo a:hover{
+  background:none;
 }
 
-#apiv2-banner a{
-  color: white;
-  text-decoration: none;
+#content{
+  padding-left: 240px;
 }
 
-#apiv2-features{
-  text-decoration: underline;
+#content img{
+  width: 550px;
+  max-width: 100%;
 }
 
+#markdown-toc{
+  padding-left: 30px;
+}
 
+#markdown-toc li{
+  list-style-type: lower-roman ;
+}
 
 #footer {
-  margin: 40px 0 0 0;
-  padding: 0 0 10px 0;
-  background: #f0f0f0;
+  margin: 40px 0 20px 0;
   color: #000;
 }
 
 #footer a {
   color: #000;
-}
-
-#footer > div {
-  width: 700px;
-  margin: 0 auto;
 }
 
 #footer .copyright {
@@ -137,15 +184,29 @@ h2 {
   list-style-type: none;
 }
 
-p.note {
-  padding: 4px 10px;
+.note {
+  padding: 10px 20px;
   background: #ffe;
   color: #3d3d13;
 }
 
-p.note a {
+.note.warning{
+  background: #FFEAAD;
+}
+
+.note a {
   font-weight: bold;
   color: #000 !important;
+}
+
+.note p {
+  margin: 0;
+}
+
+.note h2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 0 5px;
 }
 
 .tabs .selector {
@@ -185,9 +246,42 @@ p.note a {
   display: block;
 }
 
-/* syntax */
+.coming-soon:after{
+  content: "soon";
+  background: #fedbe9;
+  padding: 0 4px;
+  border-radius: 5px;
+  color: #e64382;
+  margin-left: 5px;
+  font-size: 10px;
+  line-height: 11px;
+}
+
+/* "http block" example styling */
+
+.headers{
+  margin-bottom: 0px;
+}
+
+.headers > code {
+  border-radius: 5px 5px 0px 0px;
+  background: #F0EEEE;
+  border-bottom: 0px;
+}
+
+.headers + .highlight{
+  margin-top: 0px;
+}
+
+.headers + .highlight > code{
+  border-radius: 0px 0px 5px 5px;
+}
+
+/* default syntax highlighting */
 code {
+  font-family: Inconsolata, Consolas, monospace;
   white-space: pre;
+  background: #f0f0f0;
 }
 code.sh {
   white-space: normal;
@@ -196,12 +290,13 @@ code.sh {
   background: #fff;
   border: 2px solid #eaeaea;
 }
-pre > code {
+pre > code, pre.terminal {
   display: block;
   padding: 5px;
   border-radius: 5px;
   border: 2px solid #eaeaea;
   background: #f9f9f9;
+  overflow: auto;
 }
 pre > code.sh {
   background: #feeeee;
