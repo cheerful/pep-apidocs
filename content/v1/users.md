@@ -121,7 +121,7 @@ role
 
 ### Response
 
-<%= headers 201, :Location => "#{API_V2_URL}/users/1"  %>
+<%= headers 201, :Location => "#{API_V1_URL}/users/1"  %>
 <%= json :user %>
 
 ### Custom Error Codes

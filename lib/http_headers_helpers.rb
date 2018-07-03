@@ -30,8 +30,8 @@ module Pep
         head.each do |key, value|
           case key
             when :pagination
-              lines << "Link: <#{API_V2_URL}/#{pagination_resource}?page=2>; rel=\"next\","
-              lines << " <#{API_V2_URL}/#{pagination_resource}?page=5>; rel=\"last\""
+              lines << "Link: <#{API_V1_URL}/#{pagination_resource}?page=2>; rel=\"next\","
+              lines << " <#{API_V1_URL}/#{pagination_resource}?page=5>; rel=\"last\""
             when :pagination_resource
               nil
             else lines << "#{key}: #{value}"

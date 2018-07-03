@@ -3,7 +3,7 @@ require 'json'
 module Pep
   module Resources
     module Helpers
-      API_HOST = "https://api.letsfreckle.com/"
+      API_HOST = "https://api.pep.cards/"
       TOKEN    = "scbp72wdc528hm8n52fowkma321tn58-jc1l2dkil0pnb75xjni48ad2wwsgr1d"
 
       def api_call method, path

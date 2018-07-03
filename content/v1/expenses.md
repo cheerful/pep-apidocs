@@ -101,7 +101,7 @@ description
 
 ### Reponse
 
-<%= headers 201, :Location => "#{API_V2_URL}/expenses/1" %>
+<%= headers 201, :Location => "#{API_V1_URL}/expenses/1" %>
 <%= json :expense %>
 
 ## Edit an Expense

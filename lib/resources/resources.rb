@@ -1,11 +1,11 @@
 module Pep
   module Resources
     OAUTH2_URL = "https://secure.letsfreckle.com"
-    BASE_DOMAIN = "api.letsfreckle.com"
-    API_V2_DOMAIN = BASE_DOMAIN + "/v2"
+    BASE_DOMAIN = "api.pep.cards"
+    API_V1_DOMAIN = BASE_DOMAIN + "/v2"
     BASE_URL   = "https://" + BASE_DOMAIN
-    API_V2_URL = "https://" + API_V2_DOMAIN
-    API_V2_EXAMPLE_PERSONAL_ACCESS_TOKEN = "scbp72wdc528hm8n52fowkma321tn58-jc1l2dkil0pnb75xjni48ad2wwsgr1d"
+    API_V1_URL = "https://" + API_V1_DOMAIN
+    API_V1_EXAMPLE_PERSONAL_ACCESS_TOKEN = "scbp72wdc528hm8n52fowkma321tn58-jc1l2dkil0pnb75xjni48ad2wwsgr1d"
 
     VALIDATION_ERROR_EXAMPLE = {
        "message" => "Validation Failed",
@@ -80,7 +80,7 @@ module Pep
 
     OAUTH_AUTHORIZATION_TOKEN = {
       "id" => 1,
-      "url" => "#{API_V2_URL}/authorizations/1",
+      "url" => "#{API_V1_URL}/authorizations/1",
       "scopes" => ["current_user","project"],
       "token" => "abc123",
       "app" => {
@@ -101,13 +101,13 @@ module Pep
       "first_name" =>  "John",
       "last_name" =>  "Test",
       "profile_image_url" => "#{BASE_URL}/images/avatars/0000/0001/avatar.jpg",
-      "url" =>  "#{API_V2_URL}/users/5538",
+      "url" =>  "#{API_V1_URL}/users/5538",
     }
 
     SIMPLE_TEAM = {
       "id" => 9283,
       "name" => "R&D",
-      "url" => "#{API_V2_URL}/teams/9283"
+      "url" => "#{API_V1_URL}/teams/9283"
     }
 
     USER = SIMPLE_USER.merge({
@@ -117,17 +117,17 @@ module Pep
       "teams" => [SIMPLE_TEAM],
 
       "entries" => 0,
-      "entries_url" => "#{API_V2_URL}/users/5538/entries",
+      "entries_url" => "#{API_V1_URL}/users/5538/entries",
 
       "expenses" => 0,
-      "expenses_url" => "#{API_V2_URL}/users/5538/expenses",
+      "expenses_url" => "#{API_V1_URL}/users/5538/expenses",
 
-      "give_access_to_project_url" => "#{API_V2_URL}/users/5538/give_access_to_projects",
-      "revoke_access_to_project_url" => "#{API_V2_URL}/users/5538/revoke_access_to_projects",
-      "revoke_access_to_all_projects_url" => "#{API_V2_URL}/users/5538/revoke_access_to_all_projects",
+      "give_access_to_project_url" => "#{API_V1_URL}/users/5538/give_access_to_projects",
+      "revoke_access_to_project_url" => "#{API_V1_URL}/users/5538/revoke_access_to_projects",
+      "revoke_access_to_all_projects_url" => "#{API_V1_URL}/users/5538/revoke_access_to_all_projects",
 
-      "activate_url" => "#{API_V2_URL}/users/5538/activate",
-      "deactivate_url" => "#{API_V2_URL}/users/5538/deactivate",
+      "activate_url" => "#{API_V1_URL}/users/5538/activate",
+      "deactivate_url" => "#{API_V1_URL}/users/5538/deactivate",
 
       "created_at" => "2010-06-09T20:44:57Z",
       "updated_at" => "2010-06-09T20:44:57Z",
@@ -138,10 +138,10 @@ module Pep
       "role" => "leader",
 
       "entries" => 0,
-      "entries_url" => "#{API_V2_URL}/users/5538/entries",
+      "entries_url" => "#{API_V1_URL}/users/5538/entries",
 
       "expenses" => 0,
-      "expenses_url" => "#{API_V2_URL}/users/5538/expenses",
+      "expenses_url" => "#{API_V1_URL}/users/5538/expenses",
 
       "time_format" => "fraction",
       "week_start"=> "Sunday",
@@ -164,15 +164,15 @@ module Pep
       "id" => 9283,
       "name" => "R&D",
       "users" => [SIMPLE_USER],
-      "url" => "#{API_V2_URL}/teams/9283",
-      "entries_url" => "#{API_V2_URL}/teams/9283/entries/",
-      "users_url" => "#{API_V2_URL}/teams/9283/users/",
+      "url" => "#{API_V1_URL}/teams/9283",
+      "entries_url" => "#{API_V1_URL}/teams/9283/entries/",
+      "users_url" => "#{API_V1_URL}/teams/9283/users/",
       "created_at" => "2012-01-09T08:33:29Z",
       "updated_at" => "2012-01-09T08:33:29Z",
 
-      "add_users_url" => "#{API_V2_URL}/teams/9283/add_users",
-      "remove_users_url" => "#{API_V2_URL}/teams/9283/remove_users",
-      "remove_all_users_url" => "#{API_V2_URL}/teams/9283/remove_all_users",
+      "add_users_url" => "#{API_V1_URL}/teams/9283/add_users",
+      "remove_users_url" => "#{API_V1_URL}/teams/9283/remove_users",
+      "remove_all_users_url" => "#{API_V1_URL}/teams/9283/remove_all_users",
     }
 
 
@@ -191,7 +191,7 @@ module Pep
       "invoicing_enabled"=>  true,
       "owner" =>  SIMPLE_USER,
 
-      "url" =>  "#{API_V2_URL}/account/",
+      "url" =>  "#{API_V1_URL}/account/",
       "created_at" => "2012-01-09T08:33:29Z",
       "updated_at" => "2012-01-09T08:33:29Z",
     }
@@ -203,29 +203,29 @@ module Pep
       "enabled" =>  true,
       "billable" => true,
       "color" => "#ff9898",
-      "url" => "#{API_V2_URL}/projects/37396",
+      "url" => "#{API_V1_URL}/projects/37396",
     }
 
     SIMPLE_PROJECT_GROUP = {
       "id" => 3768,
       "name" => "Sprockets, Inc.",
-      "url" => "#{API_V2_URL}/project_groups/3768"
+      "url" => "#{API_V1_URL}/project_groups/3768"
     }
 
     PROJECT_GROUP = {
       "id" => 3768,
       "name" => "Sprockets, Inc.",
       "projects" => [SIMPLE_PROJECT],
-      "url" => "#{API_V2_URL}/project_groups/3768",
-      "entries_url" => "#{API_V2_URL}/project_groups/3768/entries/",
-      "invoices_url" => "#{API_V2_URL}/project_groups/3768/invoices/",
-      "projects_url" => "#{API_V2_URL}/project_groups/3768/projects/",
+      "url" => "#{API_V1_URL}/project_groups/3768",
+      "entries_url" => "#{API_V1_URL}/project_groups/3768/entries/",
+      "invoices_url" => "#{API_V1_URL}/project_groups/3768/invoices/",
+      "projects_url" => "#{API_V1_URL}/project_groups/3768/projects/",
       "created_at" => "2012-01-09T08:33:29Z",
       "updated_at" => "2012-01-09T08:33:29Z",
 
-      "add_projects_url" => "#{API_V2_URL}/project_groups/3768/add_projects",
-      "remove_projects_url" => "#{API_V2_URL}/project_groups/3768/remove_projects",
-      "remove_all_projects_url" => "#{API_V2_URL}/project_groups/3768/remove_all_projects",
+      "add_projects_url" => "#{API_V1_URL}/project_groups/3768/add_projects",
+      "remove_projects_url" => "#{API_V1_URL}/project_groups/3768/remove_projects",
+      "remove_all_projects_url" => "#{API_V1_URL}/project_groups/3768/remove_all_projects",
     }
 
 
@@ -240,7 +240,7 @@ module Pep
 
     SIMPLE_IMPORT = {
       "id" => 8910,
-      "url" => "#{API_V2_URL}/imports/8910"
+      "url" => "#{API_V1_URL}/imports/8910"
     }
 
     IMPORT = {
@@ -253,19 +253,19 @@ module Pep
 
       "status" => "completed",
 
-      "report_url" => "#{API_V2_URL}/imports/8910/report",
+      "report_url" => "#{API_V1_URL}/imports/8910/report",
 
       "entries" => 0,
-      "entries_url" => "#{API_V2_URL}/imports/8910/entries",
+      "entries_url" => "#{API_V1_URL}/imports/8910/entries",
 
       "tags" => 0,
-      "tags_url" => "#{API_V2_URL}/imports/8910/tags",
+      "tags_url" => "#{API_V1_URL}/imports/8910/tags",
 
       "projects" => 0,
-      "projects_url" => "#{API_V2_URL}/imports/8910/projects",
+      "projects_url" => "#{API_V1_URL}/imports/8910/projects",
 
 
-      "url" => "#{API_V2_URL}/imports/8910",
+      "url" => "#{API_V1_URL}/imports/8910",
       "created_at" => "2010-06-09T20:44:57Z",
       "updated_at" => "2010-06-09T20:44:57Z",
     }
@@ -331,9 +331,9 @@ module Pep
     #   #   "budgeted_minutes" => 1000,
     #   #   "starts_on" => "2001-01-02",
     #   #   "ends_on" => "2001-01-03",
-    #   #   "url" => "#{API_V2_URL}/recurring_goals/8899"
+    #   #   "url" => "#{API_V1_URL}/recurring_goals/8899"
     #   # },
-    #   "url" =>"#{API_V2_URL}/goals/445566"
+    #   "url" =>"#{API_V1_URL}/goals/445566"
     # }
 
     # PROJECT_GOAL_EDITABLE_FIELDS = {
@@ -351,7 +351,7 @@ module Pep
 
     #   "goals" => [PROJECT_GOAL],
 
-    #   "url" => "#{API_V2_URL}/recurring_goals/8899"
+    #   "url" => "#{API_V1_URL}/recurring_goals/8899"
     # }
 
     # PROJECT_GOAL_CREATE_FIELDS = {
@@ -367,7 +367,7 @@ module Pep
       "invoice_date" => "2013-07-09",
       "state" => "unpaid",
       "total_amount" => 189.33,
-      "url" => "#{API_V2_URL}/invoices/12345678",
+      "url" => "#{API_V1_URL}/invoices/12345678",
     }
 
     PROJECT_CREATE_FIELDS = {
@@ -392,16 +392,16 @@ module Pep
       # "recurring_goals" => [PROJECT_RECURRING_GOAL],
 
       "entries" => 0,
-      "entries_url" =>"#{API_V2_URL}/projects/37396/entries",
+      "entries_url" =>"#{API_V1_URL}/projects/37396/entries",
       "expenses" => 0,
-      "expenses_url" => "#{API_V2_URL}/projects/37396/expenses",
-      "url" =>"#{API_V2_URL}/projects/37396",
+      "expenses_url" => "#{API_V1_URL}/projects/37396/expenses",
+      "url" =>"#{API_V1_URL}/projects/37396",
       "created_at" => "2012-01-09T08:33:29Z",
       "updated_at" => "2012-01-09T08:33:29Z",
 
-      "project_merge_url" => "#{API_V2_URL}/projects/37396/merge",
-      "project_archive_url" => "#{API_V2_URL}/projects/37396/archive",
-      "project_unarchive_url" => "#{API_V2_URL}/projects/37396/unarchive",
+      "project_merge_url" => "#{API_V1_URL}/projects/37396/merge",
+      "project_archive_url" => "#{API_V1_URL}/projects/37396/archive",
+      "project_unarchive_url" => "#{API_V1_URL}/projects/37396/unarchive",
     })
 
     SIMPLE_TAG = {
@@ -409,19 +409,19 @@ module Pep
       "name" => "freckle",
       "billable" => true,
       "formatted_name" => "#freckle",
-      "url" => "#{API_V2_URL}/tags/249397"
+      "url" => "#{API_V1_URL}/tags/249397"
     }
 
     TAG = SIMPLE_TAG.merge({
       "import" => {
         "id" => 8910,
-        "url" => "#{API_V2_URL}/imports/8910"
+        "url" => "#{API_V1_URL}/imports/8910"
       },
       "entries" => 0,
-      "entries_url" => "#{API_V2_URL}/tags/55629/entries",
+      "entries_url" => "#{API_V1_URL}/tags/55629/entries",
 
 
-      "merge_url" => "#{API_V2_URL}/tags/55629/merge",
+      "merge_url" => "#{API_V1_URL}/tags/55629/merge",
       "created_at" => "2010-06-09T20:44:57Z",
       "updated_at" => "2010-06-09T20:44:57Z",
     })
@@ -441,10 +441,10 @@ module Pep
       "import" => SIMPLE_IMPORT,
       "approved_at" => "2012-01-10T08:33:29Z",
       "approved_by" => SIMPLE_USER,
-      "url" => "#{API_V2_URL}/entries/1711626",
-      "invoiced_outside_of_freckle_url" => "#{API_V2_URL}/entries/1711626/invoiced_outside_of_freckle",
-      "approved_url" => "#{API_V2_URL}/entries/1711626/approved",
-      "unapproved_url" => "#{API_V2_URL}/entries/1711626/unapproved",
+      "url" => "#{API_V1_URL}/entries/1711626",
+      "invoiced_outside_of_freckle_url" => "#{API_V1_URL}/entries/1711626/invoiced_outside_of_freckle",
+      "approved_url" => "#{API_V1_URL}/entries/1711626/approved",
+      "unapproved_url" => "#{API_V1_URL}/entries/1711626/unapproved",
       "created_at" => "2012-01-09T08:33:29Z",
       "updated_at" => "2012-01-09T08:33:29Z",
     }
@@ -470,7 +470,7 @@ module Pep
       "invoice" => SIMPLE_INVOICE,
       "user" => SIMPLE_USER,
 
-      "url" => "#{API_V2_URL}/expense/2233",
+      "url" => "#{API_V1_URL}/expense/2233",
       "created_at" => "2010-06-09T20:44:57Z",
       "updated_at" => "2010-06-09T20:44:57Z",
     }
@@ -637,19 +637,19 @@ module Pep
       #a count of all the entries in the invoice
       "entries" => 123,
       #the url to view all of the entries for this invoice
-      "entries_url" => "#{API_V2_URL}/invoices/26642/entries",
+      "entries_url" => "#{API_V1_URL}/invoices/26642/entries",
 
       #a count of all the expenses in the invoice
       "expenses" => 324,
       #the url to view all of the expenses for this invoice
-      "expenses_url" => "#{API_V2_URL}/invoices/26642/expenses",
+      "expenses_url" => "#{API_V1_URL}/invoices/26642/expenses",
 
       # the public share URL
       "share_url" => "https://apitest.letsfreckle.com/i/bqrnbojlbxqswtq9xla9uc40z",
 
       "created_at" => "2013-07-09T23:04:05Z",
       "updated_at" => "2013-07-09T23:04:06Z",
-      "url" => "#{API_V2_URL}/invoices/26642"
+      "url" => "#{API_V1_URL}/invoices/26642"
     }
 
     INVOICE_EDITABLE_FIELDS = {
@@ -685,10 +685,10 @@ module Pep
       "description" => "freckle work",
       "user" => SIMPLE_USER,
       "project" => SIMPLE_PROJECT,
-      "url" => "#{API_V2_URL}/projects/37396/timer",
-      "start_url" => "#{API_V2_URL}/projects/37396/timer/start",
-      "pause_url" => "#{API_V2_URL}/projects/37396/timer/pause",
-      "log_url"   => "#{API_V2_URL}/projects/37396/timer/log"
+      "url" => "#{API_V1_URL}/projects/37396/timer",
+      "start_url" => "#{API_V1_URL}/projects/37396/timer/start",
+      "pause_url" => "#{API_V1_URL}/projects/37396/timer/pause",
+      "log_url"   => "#{API_V1_URL}/projects/37396/timer/log"
     }
 
     SUBDOMAIN = {

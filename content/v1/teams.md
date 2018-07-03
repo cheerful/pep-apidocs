@@ -51,7 +51,7 @@ user_ids
 
 ### Response
 
-<%= headers 201, :Location => "#{API_V2_URL}/teams/1"  %>
+<%= headers 201, :Location => "#{API_V1_URL}/teams/1"  %>
 <%= json :team %>
 
 ## Get a team

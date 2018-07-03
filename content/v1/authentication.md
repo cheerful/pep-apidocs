@@ -31,13 +31,13 @@ There are two ways to send the token—examples are given below:
 As a *query parameter* named `pep_token`:
 
 <pre class="terminal">
-http GET <%= API_V2_URL %>/cards pep_token==<%= API_V2_EXAMPLE_PERSONAL_ACCESS_TOKEN %>
+http GET <%= API_V1_URL %>/cards pep_token==<%= API_V1_EXAMPLE_PERSONAL_ACCESS_TOKEN %>
 </pre>
 
 As a *HTTP header* named `X-PepToken`:
 
 <pre class="terminal">
-http GET <%= API_V2_URL %>/cards X-PepToken:<%= API_V2_EXAMPLE_PERSONAL_ACCESS_TOKEN %>
+http GET <%= API_V1_URL %>/cards X-PepToken:<%= API_V1_EXAMPLE_PERSONAL_ACCESS_TOKEN %>
 </pre>
 
 ## Basic Authentication
@@ -51,5 +51,5 @@ You can authenticate using [Personal Access Tokens](http://help.pep.cards/articl
 To do so, provide the Personal Access Token as the username and provide a blank password or a password of `x-pep-token`. For example:
 
 <pre class='terminal'>
-http GET <%= API_V2_URL %>/cards -a <%= API_V2_EXAMPLE_PERSONAL_ACCESS_TOKEN %>:x-pep-token
+http GET <%= API_V1_URL %>/cards -a <%= API_V1_EXAMPLE_PERSONAL_ACCESS_TOKEN %>:x-pep-token
 </pre>

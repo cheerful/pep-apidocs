@@ -90,7 +90,7 @@ color
 
 ### Response
 
-<%= headers 201, :Location => "#{API_V2_URL}/projects/1"  %>
+<%= headers 201, :Location => "#{API_V1_URL}/projects/1"  %>
 <%= json :project %>
 
 ### Custom Error Codes

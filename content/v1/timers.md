@@ -78,7 +78,7 @@ description
 
 <%= api_call :put, '/v2/projects/:project_id/timer/start' %>
 
-<%= headers 200, :Location => "#{API_V2_URL}/projects/1/timer"  %>
+<%= headers 200, :Location => "#{API_V1_URL}/projects/1/timer"  %>
 <%= json :timer %>
 
 ### Input

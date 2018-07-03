@@ -55,13 +55,13 @@ Please note that Freckle® is a registered trademark of Slash7 LLC. Do not name 
 API Resources are accessed through this base endpoint:
 
 ~~~
-<%= API_V2_URL %>
+<%= API_V1_URL %>
 ~~~
 
 For example, the URL for accessing the timers of a user is:
 
 ~~~
-<%= API_V2_URL + "/timers" %>
+<%= API_V1_URL + "/timers" %>
 ~~~
 
 <p class="note">
@@ -203,13 +203,13 @@ HTTP Redirection will be used when appropriate, meaning that clients should assu
 Redirect responses will have a `Location` header field which contains the URI of the resource to which the client should repeat the request.
 
 ### Permanent Redirection
-<%= headers 301, :Location => API_V2_URL + "/new/uri" %>
+<%= headers 301, :Location => API_V1_URL + "/new/uri" %>
 
 This and all future requests should be directed to the new URI.
 
 ### Temporary Redirection
-<%= headers 302, :Location => API_V2_URL + "/new/uri" %>
-<%= headers 307, :Location => API_V2_URL + "/new/uri" %>
+<%= headers 302, :Location => API_V1_URL + "/new/uri" %>
+<%= headers 307, :Location => API_V1_URL + "/new/uri" %>
 
 Repeat the request verbatim to the URI specified in the `Location` header, but clients should still continue to use th original URI in future requests.
 
@@ -246,10 +246,10 @@ Some actions can use the `per_page` parameter to return up to 1,000 items per pa
 When pagination is used, the `Link` header includes the URLs used in Pagination. Clients should use these links instead of following their own, in case pagination rules change in the future.
 
 ~~~
-Link: <<%= "#{API_V2_URL}" %>/users/?page=3&per_page=100>; rel="next",
-  <<%= "#{API_V2_URL}" %>/users/?page=2&per_page=100>; rel="prev",
-  <<%= "#{API_V2_URL}" %>/users/?page=1&per_page=100>; rel="first",
-  <<%= "#{API_V2_URL}" %>/users/?page=50&per_page=100>; rel="last"
+Link: <<%= "#{API_V1_URL}" %>/users/?page=3&per_page=100>; rel="next",
+  <<%= "#{API_V1_URL}" %>/users/?page=2&per_page=100>; rel="prev",
+  <<%= "#{API_V1_URL}" %>/users/?page=1&per_page=100>; rel="first",
+  <<%= "#{API_V1_URL}" %>/users/?page=50&per_page=100>; rel="last"
 ~~~
 
 The `rel` attribute indicates what the URL links to:

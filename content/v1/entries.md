@@ -168,7 +168,7 @@ source_url
 
 ### Reponse
 
-<%= headers 201, :Location => "#{API_V2_URL}/entries/1" %>
+<%= headers 201, :Location => "#{API_V1_URL}/entries/1" %>
 <%= json :entry %>
 
 
